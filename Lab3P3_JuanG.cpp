@@ -33,6 +33,8 @@ int main(){
 	int shotsJ2 = 0;
 	int Jug1b1=0,Jug1b2=0,Jug1b3=0,Jug1b4=0;
 	int Jug2b1=0,Jug2b2=0,Jug2b3=0,Jug2b4=0;
+	int BarcosJug1 = 4;
+	int BarcosJug2 = 4;
 	bool salir = true;
 	do {
 		if(shotsJ1 == 5 || shotsJ2 == 5){
@@ -171,8 +173,25 @@ int main(){
 			imprimir(tableroJ2,0,0,8);
 		}
 		
-		
+		if(Jug1b1 == 3){
+			cout<<"El barco 1 del jugador 1 se hundió"<<endl;
+			Jug1b1 = 4;
+		}
+		if(Jug1b2 == 3){
+			cout<<"El barco 2 del jugador 1 se hundió"<<endl;
+			Jug1b2 = 4;
+		}
+		if(Jug1b3 == 3){
+			cout<<"El barco 3 del jugador 1 se hundió"<<endl;
+			Jug1b3 = 4;
+		}
+		if(Jug1b4 == 4){
+			cout<<"El barco 4 del jugador 1 se hundió"<<endl;
+			Jug1b4 = 4;
+		}
+		cout<<"Al jugador 1 le quedan "<<BarcosJug1<<endl;
 
+		
 	} while (salir);
 	
 	liberarMatriz(referenciaJ1,8);

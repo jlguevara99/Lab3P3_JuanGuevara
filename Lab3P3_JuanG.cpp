@@ -65,11 +65,32 @@ int main(){
 				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 0 && columna1==3)){
 					Jug2b1++;
 				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 3 && columna1==5)){
+					Jug2b2++;
+				}
 				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 3 && columna1==6)){
 					Jug2b2++;
 				}
 				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 3 && columna1==7)){
 					Jug2b2++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 4 && columna1==4)){
+					Jug2b3++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 5 && columna1==4)){
+					Jug2b3++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 6 && columna1==4)){
+					Jug2b3++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 5 && columna1==1)){
+					Jug2b4++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 6 && columna1==1)){
+					Jug2b4++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 7 && columna1==1)){
+					Jug2b4++;
 				}
 
 				referenciaJ2[fila1][columna1] = '_';

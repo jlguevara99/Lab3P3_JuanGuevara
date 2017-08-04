@@ -31,6 +31,8 @@ int main(){
 	tableroJ2 = LlenarMatriz(tableroJ2);
 	int shotsJ1 = 0;
 	int shotsJ2 = 0;
+	int Jug1b1=0,Jug1b2=0,Jug1b3=0,Jug1b4=0;
+	int Jug2b1=0,Jug2b2=0,Jug2b3=0,Jug2b4=0;
 	bool salir = true;
 	do {
 		if(shotsJ1 == 5 || shotsJ2 == 5){
@@ -53,6 +55,23 @@ int main(){
 			}
 			if(referenciaJ2[fila1][columna1] == '*'){
 				tableroJ2[fila1][columna1] = 'X';
+
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 0 && columna1==1)){
+					Jug2b1++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 0 && columna1==2)){
+					Jug2b1++;		
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 0 && columna1==3)){
+					Jug2b1++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 3 && columna1==6)){
+					Jug2b2++;
+				}
+				if(referenciaJ2[fila1][columna1]=='*' && (fila1 == 3 && columna1==7)){
+					Jug2b2++;
+				}
+
 				referenciaJ2[fila1][columna1] = '_';
 				cout<<"Acertaste"<<endl;
 				cout<<"El jugador 2 debe tomar un: ";
@@ -93,6 +112,8 @@ int main(){
 			imprimir(tableroJ2,0,0,8);
 		}
 		
+		
+
 	} while (salir);
 	
 	liberarMatriz(referenciaJ1,8);

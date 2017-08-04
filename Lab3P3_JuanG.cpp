@@ -119,6 +119,44 @@ int main(){
 			}
 			if(referenciaJ1[fila2][columna2] == '*'){
 				tableroJ1[fila1][columna2] = 'X';
+
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 1 && columna2==1)){
+                   Jug1b1++;
+				 }
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 1 && columna2==2)){
+					Jug1b1++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 1 && columna2==3)){
+					Jug1b1++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 3 && columna2==4)){
+					Jug1b2++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 4 && columna2==4)){
+					Jug1b2++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 5 && columna2==4)){
+					Jug1b2++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 2 && columna2==7)){
+					Jug1b3++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 3 && columna2==7)){
+	                Jug1b3++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 4 && columna2==7)){
+					Jug1b3++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 7 && columna2==1)){
+					Jug1b4++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 7 && columna2==3)){
+					Jug1b4++;
+				}
+				if(referenciaJ2[fila2][columna2]=='*' && (fila2 == 7 && columna2==3)){
+					Jug1b4++;
+				}
+
 				referenciaJ1[fila2][columna2] = '_';
 				cout<<"Acertaste"<<endl;
 				cout<<"El jugador 1 debe tomar un: ";

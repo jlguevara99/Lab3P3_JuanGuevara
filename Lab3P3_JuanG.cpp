@@ -31,11 +31,12 @@ int main(){
 	tableroJ2 = LlenarMatriz(tableroJ2);
 	int shotsJ1 = 0;
 	int shotsJ2 = 0;
-	bool salir = false;
+	bool salir = true;
 	do {
 		if(shotsJ1 == 5 || shotsJ2 == 5){
 			salir = false;
 		}else{
+			//turno del jugador 1
 			int fila1;
 			int columna1;
 			cout<<"Turno del jugador 1"<<endl;
@@ -52,6 +53,7 @@ int main(){
 			}
 			if(referenciaJ2[fila1][columna1] == '*'){
 				tableroJ2[fila1][columna1] = 'X';
+				referenciaJ2[fila1][columna1] = '_';
 				cout<<"Acertaste"<<endl;
 				cout<<"El jugador 2 debe tomar un: ";
 				EleccionShot();
@@ -68,18 +70,41 @@ int main(){
 			cin>>fila2;
 			cout<<"Ingrese la columna: "<<endl;
 			cin>>columna2;
-		
+			while((fila2 < 0 || fila2 >= 8) || (columna2 < 0 || columna2 >= 8)){
+				cout<<"Ingresó un dato incorrecto, vuelva a hacerlo"<<endl;
+				cout<<"Ingrese fila: "<<endl;
+				cin>> fila2;
+				cout<<"Ingrese columna: ";
+				cin>> columna2;
+			}
+			if(referenciaJ1[fila2][columna2] == '*'){
+				tableroJ1[fila1][columna2] = 'X';
+				referenciaJ1[fila2][columna2] = '_';
+				cout<<"Acertaste"<<endl;
+				cout<<"El jugador 1 debe tomar un: ";
+				EleccionShot();
+				shotsJ1++;
+			}else{
+				cout<<"Fallaste"<<endl;
+			}
+			cout<<"Tablero del jugador 1"<<endl;
+			imprimir(tableroJ1,0,0,8);
+			cout<<"Tablero del jugador 2"<<endl;
+			imprimir(tableroJ2,0,0,8);
 		}
-		liberarMatriz(referenciaJ1,8);
-		liberarMatriz(referenciaJ2,8);
-		liberarMatriz(tableroJ1,8);
-		liberarMatriz(tableroJ2,8);
-
-
-
+		
 	} while (salir);
 	
+	liberarMatriz(referenciaJ1,8);
+	liberarMatriz(referenciaJ2,8);
+	liberarMatriz(tableroJ1,8);
+	liberarMatriz(tableroJ2,8);
 	
+	if(shotsJ1 == 5){
+		cout<<"El Jugador 2 ha ganado!!!!!!!!"<<endl;
+	}else{
+		cout<<"El jugador 1 ha ganado!!!!!!!!"<<endl;
+	}
 
 
 	return 0;

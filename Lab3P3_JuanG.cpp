@@ -97,17 +97,22 @@ int main(){
 
 				referenciaJ2[fila1][columna1] = '_';
 				cout<<"Acertaste"<<endl;
+				cout<<endl;
 				cout<<"El jugador 2 debe tomar un: ";
+				
 				EleccionShot();
 				shotsJ2++;
 			}else{
 				cout<<"Fallaste"<<endl;
+				cout<<endl;
+				cout<<endl;
 			}
 
 			//turno del jugador 2
 			int fila2;
 			int columna2;
 			cout<<"Turno del jugador 2"<<endl;
+			cout<<endl;
 			cout<<"Ingrese la fila: "<<endl;
 			cin>>fila2;
 			cout<<"Ingrese la columna: "<<endl;
@@ -161,49 +166,103 @@ int main(){
 
 				referenciaJ1[fila2][columna2] = '_';
 				cout<<"Acertaste"<<endl;
+				cout<<endl;
 				cout<<"El jugador 1 debe tomar un: ";
+				
 				EleccionShot();
 				shotsJ1++;
 			}else{
 				cout<<"Fallaste"<<endl;
+				cout<<endl;
+				cout<<endl;
 			}
 			cout<<"Tablero del jugador 1"<<endl;
+			cout<<endl;
 			imprimir(tableroJ1,0,0,8);
+			cout<<endl;
+			cout<<endl;
+			cout<<endl;
 			cout<<"Tablero del jugador 2"<<endl;
+			cout<<endl;
 			imprimir(tableroJ2,0,0,8);
+			cout<<endl;
+			cout<<endl;
+			cout<<endl;
 		}
 		
 		if(Jug1b1 == 3){
 			cout<<"El barco 1 del jugador 1 se hundió"<<endl;
 			Jug1b1 = 4;
+			BarcosJug1--;
 		}
 		if(Jug1b2 == 3){
 			cout<<"El barco 2 del jugador 1 se hundió"<<endl;
 			Jug1b2 = 4;
+			BarcosJug1--;
 		}
 		if(Jug1b3 == 3){
 			cout<<"El barco 3 del jugador 1 se hundió"<<endl;
 			Jug1b3 = 4;
+			BarcosJug1--;
 		}
 		if(Jug1b4 == 4){
 			cout<<"El barco 4 del jugador 1 se hundió"<<endl;
 			Jug1b4 = 4;
-		}
-		cout<<"Al jugador 1 le quedan "<<BarcosJug1<<endl;
-
+			BarcosJug1--;
 		
+		}
+
+		if(shotsJ1 != 5 && shotsJ2 != 5){
+		cout<<"Al jugador 1 le quedan "<<BarcosJug1<<" barcos"<<endl<<endl;
+		}
+
+		if(Jug2b1 == 3){
+			cout<<"El barco 1 del jugador 2 se hundió"<<endl;
+			Jug2b1 = 4;
+			BarcosJug2--;
+		}
+		if(Jug2b2 == 3){
+			cout<<"El barco 2 del jugador 2 se hundió"<<endl;
+			Jug2b2 = 4;
+			BarcosJug2--;
+		}
+		if(Jug2b3 == 3){
+			cout<<"El barco 3 del jugador 2 se hundió"<<endl;
+			Jug2b3 = 4;
+			BarcosJug2--;
+		}
+		if(Jug2b4 == 3){
+			cout<<"El barco 4 del jugador 2 se hundió"<<endl;
+			Jug2b4 = 4;
+			BarcosJug2--;
+		}
+		if(shotsJ1 != 5 && shotsJ2 != 5){
+		cout<<"Al jugador 2 le quedan "<<BarcosJug2<<" barcos"<<endl<<endl;
+		}
+
 	} while (salir);
 	
-	liberarMatriz(referenciaJ1,8);
-	liberarMatriz(referenciaJ2,8);
-	liberarMatriz(tableroJ1,8);
-	liberarMatriz(tableroJ2,8);
+	
 	
 	if(shotsJ1 == 5){
 		cout<<"El Jugador 2 ha ganado!!!!!!!!"<<endl;
 	}else{
 		cout<<"El jugador 1 ha ganado!!!!!!!!"<<endl;
 	}
+	cout<<endl;
+	cout<<endl;
+	cout<<"Estos eran los tableros que contenían los barcos"<<endl<<endl;
+	cout<<"Jugador 1"<<endl;
+	imprimir(referenciaJ1,0,0,8);
+	cout<<endl<<endl;
+	imprimir(referenciaJ2,0,0,8);
+	cout<<endl<<endl<<"GRACIAS POR JUGAR"<<endl;
+	
+
+	liberarMatriz(referenciaJ1,8);
+	liberarMatriz(referenciaJ2,8);
+	liberarMatriz(tableroJ1,8);
+	liberarMatriz(tableroJ2,8);
 
 
 	return 0;
